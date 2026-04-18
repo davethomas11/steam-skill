@@ -21,6 +21,10 @@ Gemini CLI automatically loads these variables and redacts them from logs to ens
 
 If these variables are not set, you will be prompted to provide them.
 
+### Troubleshooting (April 2026 Process)
+- **Steam App Auth:** Creating a new API key requires authentication via the **Steam Mobile App** (usually in the **Steam Guard** or **Notifications** tab). If the prompt doesn't appear as a push notification, the user must look for it manually in the app.
+- **Rate Limits:** If the user gets "Too Many Requests," advise them to wait and stop repeated attempts.
+
 ## Workflows
 
 ### 1. Get Owned Games

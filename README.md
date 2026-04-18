@@ -17,7 +17,18 @@ This skill is designed to use **environment variables** for sensitive informatio
 
 ---
 
-## 🚀 Setup Instructions
+## ⚠️ Common Hurdles (Updated April 2026)
+
+### Steam API Key Creation: The "App Auth" Trap
+As of April 2026, Steam has added a mandatory authentication step via the **Steam Mobile App** when creating a new API key. Many users find this step difficult to locate, leading to repeated attempts and "Too Many Requests" errors.
+
+**The Process:**
+1.  Go to [steamcommunity.com/dev/apikey](https://steamcommunity.com/dev/apikey).
+2.  After entering your domain (e.g., `localhost`) and clicking Register, **check your Steam Mobile App immediately.**
+3.  **Where to find it:** It often does **not** appear as a standard push notification. Look for a "Confirmation" or "Pending Action" alert within the **Steam Guard** or **Notifications** tab of the app.
+4.  **Avoid Rate Limits:** If you don't see the prompt, do **not** keep clicking Register. Wait a few minutes or restart the app. Repeatedly trying will result in a temporary lockout.
+
+---
 
 ### 1. Obtain your Steam API Credentials
 1.  **Steam Web API Key**: 
