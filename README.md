@@ -4,6 +4,12 @@ This project provides a specialized, agent-agnostic skill for interacting with t
 
 > **Note:** This skill was built and tested primarily using **Gemini CLI**. While it includes installation support for Claude and GitHub Copilot, compatibility with those agents is provided on a best-effort basis.
 
+## 🧠 What is an Agentic Skill?
+
+Think of an **Agentic Skill** as a specialized "instruction manual" for your AI assistant. 
+
+By default, AI agents are generalists. When you "install" this skill, you are giving your AI agent the specific tools, API knowledge, and procedural instructions it needs to become an expert on the Steam Web API. This allows the agent to safely and accurately perform tasks like checking your game library or stats without you having to explain how the API works every time.
+
 ## 🛡️ Security & Transparency
 
 ### What is a `.skill` file?
