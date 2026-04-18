@@ -64,6 +64,20 @@ Using a system secure store (like the macOS Keychain or PowerShell SecretStore) 
 - **Agent Context:** Because the AI agent (Gemini CLI) runs with your user permissions, it can securely request the keys on your behalf while you are at the terminal, keeping them out of permanent cleartext files.
 
 **On Windows (PowerShell SecretStore):**
+
+First, install the required PowerShell modules:
+```powershell
+# Install the management framework
+Install-Module Microsoft.PowerShell.SecretManagement -Repository PSGallery -AllowClobber
+
+# Install the local vault extension
+Install-Module Microsoft.PowerShell.SecretStore -Repository PSGallery -AllowClobber
+
+# Register the local vault
+Register-SecretVault -Name LocalStore -ModuleName Microsoft.PowerShell.SecretStore -DefaultVault
+```
+
+Then, set your secrets:
 ```powershell
 Set-Secret -Name STEAM_API_KEY -Secret "your_key"
 Set-Secret -Name STEAM_ID -Secret "your_id"
