@@ -55,7 +55,22 @@ python steam-stats/scripts/steam_query.py IPlayerService GetOwnedGames v1 includ
 ```
 
 ### Installation
+The easiest way to install the skill for all supported agents (Gemini, Claude, Copilot) is to use the provided scripts:
+
+**On Windows (PowerShell):**
+```powershell
+.\install.ps1
+```
+
+**On Linux/macOS (Bash):**
+```bash
+chmod +x install.sh
+./install.sh
+```
+
+**Manual Installation (Gemini CLI only):**
 Once you are satisfied, install the skill to Gemini CLI:
+...
 
 **Local (This workspace only):**
 ```bash
