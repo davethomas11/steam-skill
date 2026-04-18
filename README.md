@@ -55,6 +55,14 @@ STEAM_ID=your_17_digit_id_here
 ### 3. Use System Secure Store (Optional)
 For extra security, you can store your keys in your OS keychain instead of a `.env` file.
 
+#### Why use a Secure Store?
+Using a system secure store (like the macOS Keychain or PowerShell SecretStore) provides a significantly higher level of protection than a standard `.env` file:
+
+- **Encryption at Rest:** Unlike a `.env` file, which is plain text, these stores encrypt your keys using industry-standard algorithms (like AES). Even if someone gains access to your files, they cannot read the keys.
+- **Session-Based Access:** These stores are often tied to your **User Login Session**. This means the keys are only "unlocked" when you are actively logged in.
+- **Protection from Network Attacks:** If an attacker gains unauthorized access to your file system through the network, they might be able to steal your `.env` file, but they **cannot** decrypt the secrets in a secure store without your system password or a specific master key.
+- **Agent Context:** Because the AI agent (Gemini CLI) runs with your user permissions, it can securely request the keys on your behalf while you are at the terminal, keeping them out of permanent cleartext files.
+
 **On Windows (PowerShell SecretStore):**
 ```powershell
 Set-Secret -Name STEAM_API_KEY -Secret "your_key"
