@@ -1,0 +1,14 @@
+# Environment Variables (Sensitive)
+.env
+
+# Skill Package (Build Artifact)
+*.skill
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# OS Files
+.DS_Store
+Thumbs.db
