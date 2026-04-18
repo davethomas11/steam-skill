@@ -1,6 +1,8 @@
-# Steam Stats Skill for Gemini CLI
+# Agentic Skill - Steam API
 
-This project contains a specialized skill for Gemini CLI that allows you to interact with the Steam Web API to retrieve game statistics, owned games, and achievements.
+This project provides a specialized, agent-agnostic skill for interacting with the Steam Web API to retrieve game statistics, owned games, and achievements.
+
+> **Note:** This skill was built and tested primarily using **Gemini CLI**. While it includes installation support for Claude and GitHub Copilot, compatibility with those agents is provided on a best-effort basis.
 
 ## 🛡️ Security & Transparency
 
