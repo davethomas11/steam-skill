@@ -1,6 +1,9 @@
 # Environment Variables (Sensitive)
 .env
 
+# IDEs
+.idea/
+
 # Skill Package (Build Artifact)
 *.skill
 
