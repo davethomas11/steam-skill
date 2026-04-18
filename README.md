@@ -20,23 +20,21 @@ This skill is designed to use **environment variables** for sensitive informatio
 ## ⚠️ Common Hurdles (Updated April 2026)
 
 ### Steam API Key Creation: The "App Auth" Trap
-As of April 2026, Steam has added a mandatory authentication step via the **Steam Mobile App** when creating a new API key. Many users find this step difficult to locate, leading to repeated attempts and "Too Many Requests" errors.
+As of April 2026, Steam has added a mandatory authentication step via the **Steam Mobile App** when creating a new API key. This step **does not send a push notification** to your device.
 
 **The Process:**
 1.  Go to [steamcommunity.com/dev/apikey](https://steamcommunity.com/dev/apikey).
-2.  After entering your domain (e.g., `localhost`) and clicking Register, **check your Steam Mobile App immediately.**
-3.  **Where to find it:** It often does **not** appear as a standard push notification. Look for a "Confirmation" or "Pending Action" alert within the **Steam Guard** or **Notifications** tab of the app.
-4.  **Avoid Rate Limits:** If you don't see the prompt, do **not** keep clicking Register. Wait a few minutes or restart the app. Repeatedly trying will result in a temporary lockout.
+2.  After clicking Register, open your **Steam Mobile App**.
+3.  **Where to find it:** Tap the **hamburger menu (three lines)** and select **Confirmations**. The request will be waiting there.
+4.  **Avoid Rate Limits:** If you don't see it, do **not** keep clicking Register. Wait or restart the app. Repeated attempts will lead to a lockout.
 
 ---
 
 ### 1. Obtain your Steam API Credentials
 1.  **Steam Web API Key**: 
     *   Visit [steamcommunity.com/dev/apikey](https://steamcommunity.com/dev/apikey).
-    *   Register for a key (use "localhost" for the domain if unsure).
 2.  **SteamID64**: 
     *   Your 17-digit ID can be found in your Steam Profile URL (e.g., `76561198...`).
-    *   If your profile uses a vanity URL (e.g., `/id/myname`), you can use the skill to resolve it later.
 
 ### 2. Configure Environment Variables
 Create a file named `.env` in this root directory:
