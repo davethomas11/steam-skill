@@ -12,17 +12,16 @@ This skill allows you to retrieve data from the Steam Web API.
 To use this skill, the user must provide a **Steam Web API Key** and a **SteamID64**.
 
 ### Safe Storage (Recommended)
-Store your credentials in a `.env` file in your workspace or user directory (`~/.gemini/.env`):
-```env
-STEAM_API_KEY=your_api_key_here
-STEAM_ID=your_17_digit_id_here
-```
-Gemini CLI automatically loads these variables and redacts them from logs to ensure they are handled safely.
+Store your credentials in a `.env` file, or use your system's secure store:
+- **Windows:** `Set-Secret -Name STEAM_API_KEY -Secret "..."` (Requires SecretManagement module)
+- **macOS:** `security add-generic-password -s STEAM_API_KEY -w "..."`
+
+Gemini CLI automatically loads environment variables and redacts them. The skill's scripts will fallback to system secure stores if environment variables are missing.
 
 If these variables are not set, you will be prompted to provide them.
 
 ### Troubleshooting (April 2026 Process)
-- **Steam App Auth:** Creating a new API key requires authentication via the **Steam Mobile App** (usually in the **Steam Guard** or **Notifications** tab). If the prompt doesn't appear as a push notification, the user must look for it manually in the app.
+- **Steam App Auth:** Creating a new API key requires authentication via the **Steam Mobile App**. This step **does not send a push notification**. The user must open the app, tap the **hamburger menu (three lines)**, and select **Confirmations** to approve the request.
 - **Rate Limits:** If the user gets "Too Many Requests," advise them to wait and stop repeated attempts.
 
 ## Workflows

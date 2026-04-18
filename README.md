@@ -52,6 +52,22 @@ STEAM_API_KEY=your_api_key_here
 STEAM_ID=your_17_digit_id_here
 ```
 
+### 3. Use System Secure Store (Optional)
+For extra security, you can store your keys in your OS keychain instead of a `.env` file.
+
+**On Windows (PowerShell SecretStore):**
+```powershell
+Set-Secret -Name STEAM_API_KEY -Secret "your_key"
+Set-Secret -Name STEAM_ID -Secret "your_id"
+```
+
+**On macOS (Keychain):**
+```bash
+security add-generic-password -s STEAM_API_KEY -w "your_key"
+security add-generic-password -s STEAM_ID -w "your_id"
+```
+The skill will automatically check these locations if the environment variables are not set.
+
 ---
 
 ## 🧪 Testing & Installation
