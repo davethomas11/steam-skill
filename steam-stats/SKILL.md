@@ -18,6 +18,18 @@ Store your credentials in a `.env` file, or use your system's secure store:
 
 Gemini CLI automatically loads environment variables and redacts them. The skill's scripts will fallback to system secure stores if environment variables are missing.
 
+On windows you can use the following commands to set your secrets in the local vault:
+```powershell
+Set-Secret -Name STEAM_API_KEY -Secret "your_key"
+Set-Secret -Name STEAM_ID -Secret "your_id"
+```
+
+But this requires the Microsoft.PowerShell.SecretManagement and Microsoft.PowerShell.SecretStore modules to be installed and configured. See the [README](README.md) for instructions.
+And a vault to be registered (e.g., `LocalStore`).
+
+On Windows the script will prompt for the users vault password to retrieve the secrets. If the vault is not unlocked, it will prompt the user to unlock it first.
+This needs to happen everytime because the Get-Secrets command is run in a subprocess, so the vault state is not shared.
+
 If these variables are not set, you will be prompted to provide them.
 
 ### Troubleshooting (April 2026 Process)
